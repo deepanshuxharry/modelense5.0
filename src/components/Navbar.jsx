@@ -11,9 +11,11 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Our Team", href: "/team" },
-    { name: "Our Models", href: "/our-models" },
     { name: "Contact", href: "/contact" }
   ];
+
+  const leftNavigation = navigation.slice(0, 2);
+  const rightNavigation = navigation.slice(2);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,7 @@ const Navbar = () => {
     <nav 
       className={`fixed w-full z-50 top-0 left-0 transition-all duration-500 ease-in-out
         ${scrolled ? 'bg-black backdrop-blur-md shadow-lg py-2' : 'bg-black py-2'}`} // Solid black background
-      style={{ height: '80px' }} // Fixed height for navbar
+      style={{ height: '105px', paddingTop: '15px' ,  }} // Fixed height for navbar
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -45,11 +47,16 @@ const Navbar = () => {
             className="flex-shrink-0 transform transition-transform duration-500 hover:scale-110"
           >
             <img 
-              className="h-16 w-auto object-contain" 
+              className="h-20 w-20 object-contain" 
               src="/logo.png" 
               alt="Logo" 
             />
           </Link>
+
+          {/* Brand Name */}
+          <div className="flex-grow flex justify-center">
+            <span className="text-4xl font-bold text-purple-400">MODELENS</span>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex md:items-center md:space-x-2">

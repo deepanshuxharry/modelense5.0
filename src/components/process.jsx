@@ -56,7 +56,7 @@ const ProcessSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 md:px-8 max-w-7xl mx-auto relative">
+    <section ref={sectionRef} className=" mx-auto relative process_sec pt-5 mt-10">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"/>
@@ -64,13 +64,13 @@ const ProcessSection = () => {
       </div>
 
       <div className="text-center mb-16 relative">
-        <span className="text-purple-400 text-sm font-medium tracking-wider uppercase mb-2 block">
-          Our Working Process
-        </span>
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent 
+        <h1 className=" mt-5 pt-5 text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent 
           bg-gradient-to-r from-white to-purple-400">
           The Process - Behind The Scenes
         </h1>
+        <span className="text-purple-400 text-sm font-medium tracking-wider uppercase mb-2 block">
+          Our Working Process
+        </span>
         <div className="w-24 h-1 bg-purple-600 mx-auto rounded-full"/>
       </div>
 

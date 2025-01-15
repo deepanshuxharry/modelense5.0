@@ -142,9 +142,17 @@ const GetInTouchForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black-50 via-black py-16 px-4 mt-6">
+    <div className="min-h-screen bg-gradient-to-br from-black-50 via-black py-16 px-4 mt-6 contiform">
+           <div className="text-center mb-12">
+          <h1 className="text-6xl font-extrabold mb-6 mt-5 bg-clip-text text-transparent 
+            bg-gradient-to-r from-white to-purple-400">
+           Contact Us
+          </h1>
+          <div className="w-24 h-1 bg-[#d749ff] mx-auto rounded-full" />
+        </div>
+
       <motion.div 
-        className="container mx-auto max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden"
+        className="container mx-auto max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden mt-5"
         initial="hidden"
         animate="visible"
         variants={containerVariants}

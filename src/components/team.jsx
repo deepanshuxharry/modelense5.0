@@ -56,7 +56,8 @@ const TeamSection = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 mt-5 ">
+
       {/* Header */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -64,7 +65,7 @@ const TeamSection = () => {
         className="text-center mb-20"
       >
         <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent 
-          bg-gradient-to-r from-purple-400 to-white mb-2">
+          bg-gradient-to-r from-purple-400 to-white mb-2 mt-5">
           Meet Our Team
         </h2>
         <div className="w-24 h-1 bg-purple-600 mx-auto rounded-full mb-8"/>
@@ -111,7 +112,35 @@ const TeamSection = () => {
       </motion.div>
 
       {/* Team Grid */}
+      <div class="rowss">
+
+      <div class="effect12 containerss">
+            <img src="umang2.jpeg" class="firstImg" alt=""></img>
+            <img src="umang.jpeg" class="secondImg" alt=""></img>
+            <img src="umang.jpeg" class="thirdImg" alt=""></img>
+            <div className="overlay">
+            <h1>Umang Pradhan</h1>
+            <p>Tech Manager</p>
+            </div>
+        </div>
+
+        <div class="effect12 containerss">
+            <img src="deep.jpeg" class="firstImg" alt=""></img>
+            <img src="deep3.jpeg" class="secondImg" alt=""></img>
+            <img src="deep3.jpeg" class="thirdImg" alt=""></img>
+            <div className="overlay">
+            <h1>Deepanshu Sharma</h1>
+            <p>Backend Developer</p>
+            </div>
+        </div>
+
+  
+
+        </div>
+
+      
       <div className="max-w-7xl mx-auto px-4">
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -128,6 +157,7 @@ const TeamSection = () => {
             >
               <div className="absolute inset-0 bg-purple-600/20 rounded-xl transform group-hover:translate-x-2 
                 group-hover:translate-y-2 transition-transform duration-300"/>
+                
               <div className="relative bg-gray-900 rounded-xl overflow-hidden">
                 <div className="aspect-w-3 aspect-h-4">
                   <img
@@ -143,10 +173,18 @@ const TeamSection = () => {
                   <p className="text-purple-400">{member.position}</p>
                 </div>
               </div>
+              
             </motion.div>
+            
           ))}
+
         </motion.div>
+        
       </div>
+
+
+
+
     </div>
   );
 };

@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react';
 import client from "../sanity-config/sanityClient";
 
@@ -37,7 +39,46 @@ const FullScreenGalleryPopup = ({ isOpen, onClose, images }) => {
 };
 
 // ModelCard Component
-function ModelCard({ name, image, gallery }) {
+// function ModelCard({ name, image, gallery, description }) {
+//   const [showGallery, setShowGallery] = useState(false);
+//   const allImages = [image, ...(gallery || [])];
+
+//   return (
+//     <>
+//       <div className="p-4 w-full">
+//         <div
+//           className="relative w-full h-[500px] group overflow-hidden rounded-2xl shadow-lg 
+//             transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+//           onClick={() => setShowGallery(true)}
+//         >
+//           <img
+//             src={image}
+//             alt={name}
+//             className="w-full h-full object-cover transition-transform duration-300 
+//               group-hover:scale-110"
+//           />
+//           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+//           <div className="relative z-10 h-full flex flex-col justify-end p-6 text-white">
+//             <h3 className="text-3xl font-bold mb-2">{name}</h3>
+//             {description && (
+//               <p className="text-sm text-gray-200 line-clamp-2">{description}</p>
+//             )}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Full-Screen Popup */}
+//       <FullScreenGalleryPopup
+//         isOpen={showGallery}
+//         onClose={() => setShowGallery(false)}
+//         images={allImages}
+//       />
+//     </>
+//   );
+// }
+
+
+function ModelCard({ name, image, gallery, description }) {
   const [showGallery, setShowGallery] = useState(false);
   const allImages = [image, ...(gallery || [])];
 
@@ -55,14 +96,30 @@ function ModelCard({ name, image, gallery }) {
             className="w-full h-full object-cover transition-transform duration-300 
               group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-          <div className="relative z-10 h-full flex flex-col justify-end p-6 text-white">
-            <h3 className="text-3xl font-bold">{name}</h3>
+          {/* Gradient overlay with smooth transition */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent 
+            opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          {/* Content container with smooth transition */}
+          <div className="absolute inset-x-0 bottom-0 p-6 text-white transform transition-all duration-300">
+            {/* Name and description container */}
+            <div className="relative overflow-hidden">
+              {/* Name with smooth transition */}
+              <h3 className="text-3xl font-bold transform translate-y-0 group-hover:-translate-y-2 
+                transition-transform duration-300">
+                {name}
+              </h3>
+              
+              {/* Description with smooth fade and slide */}
+              <p className="text-sm text-gray-200 mt-2 opacity-0 transform translate-y-4 
+                group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                {description}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Full-Screen Popup */}
       <FullScreenGalleryPopup
         isOpen={showGallery}
         onClose={() => setShowGallery(false)}
@@ -101,7 +158,7 @@ function OurModels() {
     const fetchModels = async () => {
       try {
         const result = await client.fetch(`
-          *[_type == "models"] {
+          *[_type == "professionals" && professionalType == "model"] {
             name,
             category,
             "profileUrl": image.asset->url,
@@ -181,6 +238,7 @@ function OurModels() {
               name={model.name}
               image={model.profileUrl}
               gallery={model.galleryUrls}
+              description={model.description}
             />
           ))}
         </div>

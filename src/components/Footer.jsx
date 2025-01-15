@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#000] text-gray-800 border-t border-gray-200">
+    <footer className="bg-[#000] text-gray-800 border-t border-gray-200 conti_foot">
       <div className="max-w-7xl mx-auto py-12 px-4 md:px-8 lg:px-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Logo */}
@@ -13,7 +13,7 @@ const Footer = () => {
             <img
               src="logo.png" // Replace with your logo path
               alt="Logo"
-              className="h-10 w-10 mr-3"
+              className="h-20 w-20 mr-3"
             />
           </div>
 
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600 text-sm">
-          <p>&copy; {new Date().getFullYear()} LM Photography. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} photographer. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

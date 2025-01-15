@@ -14,6 +14,8 @@ import TeamSection from "./components/team";
 import WorkGallery from "./components/workgallery";
 import MakeupArtist from "./components/MakeupArtist";
 import Photographers from "./components/Photographers";
+import Number from "./components/Number";
+
 
 function App() {
   return (
@@ -30,9 +32,10 @@ function App() {
                 <div className="pt-20">
                   <HeroSection />
                   <ServiceCards />
-                  <OurModels />
+                   <Number /> 
                   <WorkGallery />
                   <ProcessSection />
+
                 </div>
               </>
             }
@@ -45,6 +48,8 @@ function App() {
           <Route path="/team" element={<TeamSection />} />
           <Route path="/makeupartist" element={<MakeupArtist />} />
           <Route path="/photographers" element={<Photographers />} />
+          <Route path="/number" element={<Number />} />
+
         </Routes>
 
         <Footer />
