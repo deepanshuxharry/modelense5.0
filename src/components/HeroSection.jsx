@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Camera, Play, ArrowRight } from "lucide-react";
 
 const modelProfiles = [
-  { name: "Model 1", path: "M1.JPG" },
-  { name: "Model 2", path: "M2.JPG" },
-  { name: "Model 3", path: "M3.JPG" },
-  { name: "Model 4", path: "M4.JPG" },
-  { name: "Model 5", path: "M5.JPG" },
-  { name: "Model 6", path: "M6.JPG" },
-  { name: "Model 7", path: "M7.JPG" },
-  { name: "Model 8", path: "M8.JPG" },
+  { name: "Model 1", path: "k1.jpg" },
+  { name: "Model 2", path: "k2.jpg" },
+  { name: "Model 3", path: "k3.jpg" },
+  { name: "Model 4", path: "k4.jpg" },
+  { name: "Model 5", path: "k5.jpg" },
+  { name: "Model 6", path: "k6.jpg" },
+  { name: "Model 7", path: "k7.jpg" },
+  { name: "Model 8", path: "k8.jpg" },
 ];
 
 function HeroSection() {
