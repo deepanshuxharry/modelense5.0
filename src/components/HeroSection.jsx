@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Camera, Play, ArrowRight } from "lucide-react";
 
 const modelProfiles = [
-  { name: "Model 1", path: "k.jpg" },
+  { name: "Model 1", path: "k1.jpg" },
   { name: "Model 2", path: "k2.jpg" },
   { name: "Model 3", path: "k3.jpg" },
   { name: "Model 4", path: "k4.jpg" },
