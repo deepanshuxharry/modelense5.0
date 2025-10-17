@@ -114,7 +114,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div 
         className={`md:hidden transition-all duration-500 ease-in-out
-          ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
+          ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 overflow-hidden'}`}
       >
         <div className="px-6 py-4 space-y-2 bg-gray-900/95 backdrop-blur-md">
           {navigation.map((item) => (
